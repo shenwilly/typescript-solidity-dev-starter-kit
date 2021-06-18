@@ -24,10 +24,9 @@
     "url": "https://github.com/rhlsthrm/solidity-ts-dev-stack-example/issues"
   },
   "homepage": "https://github.com/rhlsthrm/solidity-ts-dev-stack-example#readme",
-  "prepare": "husky install",
   "husky": {
     "hooks": {
-      "pre-commit”: “echo \"[Husky] pre-commit\""
+      "pre-commit": "echo 'asdf'; yarn lint-staged"
     }
   },
   "lint-staged": {
