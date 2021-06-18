@@ -1,9 +1,9 @@
-import { ethers} from "hardhat";
+import { ethers } from "hardhat";
 import chai from "chai";
 import { Counter__factory, Counter } from "../typechain";
 
 const { expect } = chai;
-const { expectRevert } = require('@openzeppelin/test-helpers');
+const { expectRevert } = require("@openzeppelin/test-helpers");
 
 describe("Counter", () => {
   let counter: Counter;

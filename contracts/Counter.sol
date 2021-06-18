@@ -4,7 +4,6 @@ import "hardhat/console.sol";
 
 contract Counter {
     uint256 count = 0;
-
     event CountedTo(uint256 number);
 
     function getCount() public view returns (uint256) {
