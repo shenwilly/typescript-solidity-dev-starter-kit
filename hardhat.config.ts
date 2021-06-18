@@ -7,8 +7,7 @@ import "@nomiclabs/hardhat-waffle";
 import "@typechain/hardhat";
 import "@nomiclabs/hardhat-etherscan";
 import "@nomiclabs/hardhat-web3";
-// TODO: reenable solidity-coverage when it works
-// import "solidity-coverage";
+import "solidity-coverage";
 
 const INFURA_API_KEY = process.env.INFURA_API_KEY || "";
 const RINKEBY_PRIVATE_KEY =
@@ -22,7 +21,12 @@ const config: HardhatUserConfig = {
     compilers: [{ version: "0.7.6", settings: {} }],
   },
   networks: {
-    hardhat: {},
+    hardhat: {
+      // forking: {
+      //   url: "https://eth-mainnet.alchemyapi.io/v2/[API_KEY]",
+      //   blockNumber: 12627210,
+      // },
+    },
     localhost: {},
     rinkeby: {
       url: `https://rinkeby.infura.io/v3/${INFURA_API_KEY}`,

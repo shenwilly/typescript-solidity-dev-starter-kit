@@ -3,6 +3,7 @@ import chai from "chai";
 import { Counter__factory, Counter } from "../typechain";
 
 const { expect } = chai;
+const { expectRevert } = require('@openzeppelin/test-helpers');
 
 describe("Counter", () => {
   let counter: Counter;
@@ -27,6 +28,12 @@ describe("Counter", () => {
       await counter.countUp();
       let count = await counter.getCount();
       expect(count).to.eq(1);
+    });
+  });
+
+  describe("count down", async () => {
+    it("should revert", async () => {
+      await expectRevert(counter.countDown(), "Uint256 underflow");
     });
   });
 });
