@@ -4,7 +4,6 @@ import "hardhat/console.sol";
 
 contract Counter {
     uint256 count = 0;
-
     event CountedTo(uint256 number);
 
     function getCount() public view returns (uint256) {
@@ -15,9 +14,7 @@ contract Counter {
         console.log("countUp: count =", count);
         uint256 newCount = count + 1;
         require(newCount > count, "Uint256 overflow");
-
         count = newCount;
-
         emit CountedTo(count);
         return count;
     }
@@ -26,7 +23,6 @@ contract Counter {
         console.log("countDown: count =", count);
         uint256 newCount = count - 1;
         require(newCount < count, "Uint256 underflow");
-
         count = newCount;
 
         emit CountedTo(count);
