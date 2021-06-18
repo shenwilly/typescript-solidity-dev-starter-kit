@@ -13,11 +13,12 @@ contract Counter {
     function countUp() public returns (uint256) {
         console.log("countUp: count =", count);
         uint256 newCount = count + 1;
-        require(newCount > count, "Uint256 overflow"); 
-        count = newCount;
+        require(newCount > count, "Uint256 overflow"); count = newCount;
+
         emit CountedTo(count);
         return count;
     }
+
     function countDown() public returns (uint256) {
         console.log("countDown: count =", count);
         uint256 newCount = count - 1;

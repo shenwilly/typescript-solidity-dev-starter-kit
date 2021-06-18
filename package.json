@@ -24,6 +24,20 @@
     "url": "https://github.com/rhlsthrm/solidity-ts-dev-stack-example/issues"
   },
   "homepage": "https://github.com/rhlsthrm/solidity-ts-dev-stack-example#readme",
+  "prepare": "husky install",
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.sol": [
+      "yarn lint:sol:prettier:fix"
+    ],
+    "test/**": [
+      "yarn lint:tests:prettier:fix"
+    ]
+  },  
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.2",
     "@nomiclabs/hardhat-etherscan": "^2.1.2",
@@ -46,6 +60,8 @@
     "ethereum-waffle": "^3.3.0",
     "ethers": "^5.1.4",
     "hardhat": "^2.2.1",
+    "husky": "6.0.0",
+    "lint-staged": "11.0.0",
     "prettier": "^2.3.1",
     "prettier-plugin-solidity": "^1.0.0-beta.13",
     "solhint": "^3.3.6",
