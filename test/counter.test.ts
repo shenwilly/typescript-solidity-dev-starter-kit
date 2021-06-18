@@ -26,8 +26,7 @@ describe("Counter", () => {
   describe("count up", async () => {
     it("should count up", async () => {
       await counter.countUp();
-      let count = await counter.getCount();
-      expect(count).to.eq(1);
+      let count = await counter.getCount();expect(count).to.eq(1);
     });
   });
 
