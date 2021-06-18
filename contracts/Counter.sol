@@ -15,7 +15,6 @@ contract Counter {
         uint256 newCount = count + 1;
         require(newCount > count, "Uint256 overflow");
         count = newCount;
-
         emit CountedTo(count);
         return count;
     }
