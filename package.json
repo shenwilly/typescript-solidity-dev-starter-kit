@@ -27,7 +27,7 @@
   "prepare": "husky install",
   "husky": {
     "hooks": {
-      "pre-commit": "yarn lint-staged"
+      "pre-commit”: “echo \"[Husky] pre-commit\""
     }
   },
   "lint-staged": {

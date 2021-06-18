@@ -17,6 +17,7 @@ contract Counter {
         emit CountedTo(count);
         return count;
     }
+
     function countDown() public returns (uint256) {
         console.log("countDown: count =", count);
         uint256 newCount = count - 1;require(newCount < count, "Uint256 underflow");
