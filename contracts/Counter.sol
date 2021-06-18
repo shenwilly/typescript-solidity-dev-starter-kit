@@ -5,9 +5,11 @@ import "hardhat/console.sol";
 contract Counter {
     uint256 count = 0;
     event CountedTo(uint256 number);
+
     function getCount() public view returns (uint256) {
         return count;
     }
+
     function countUp() public returns (uint256) {
         console.log("countUp: count =", count);
         uint256 newCount = count + 1;
