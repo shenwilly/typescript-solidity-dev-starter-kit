@@ -7,6 +7,8 @@ import "@nomiclabs/hardhat-waffle";
 import "@typechain/hardhat";
 import "@nomiclabs/hardhat-etherscan";
 import "@nomiclabs/hardhat-web3";
+import "hardhat-deploy";
+import "@nomiclabs/hardhat-ethers"; 
 import "solidity-coverage";
 
 const INFURA_API_KEY = process.env.INFURA_API_KEY || "";
@@ -17,6 +19,10 @@ const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY;
 
 const config: HardhatUserConfig = {
   defaultNetwork: "hardhat",
+  namedAccounts: {
+    deployer: 0,
+    simpleERC20Beneficiary: 1,
+  },
   solidity: {
     compilers: [{ version: "0.7.6", settings: {} }],
   },
@@ -24,7 +30,7 @@ const config: HardhatUserConfig = {
     hardhat: {
       // forking: {
       //   url: "https://eth-mainnet.alchemyapi.io/v2/[API_KEY]",
-      //   blockNumber: 12627210,
+        // blockNumber: 12627210,
       // },
     },
     localhost: {},
